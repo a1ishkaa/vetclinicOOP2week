@@ -3,24 +3,23 @@ package model;
 import exception.InvalidInputException;
 
 public class Owner extends Person {
+    private int petsCount;
 
-    private int numberOfPets;
-
-    public Owner(int id, String name, String phone, int numberOfPets) {
+    public Owner(int id, String name, String phone, int petsCount) {
         super(id, name, phone);
-        setNumberOfPets(numberOfPets);
+        setPetsCount(petsCount);
     }
 
-    public void setNumberOfPets(int numberOfPets) {
-        if (numberOfPets < 0) {
-            throw new InvalidInputException("Pets cannot be negative");
-        }
-        this.numberOfPets = numberOfPets;
+    public int getPetsCount() { return petsCount; }
+
+    public void setPetsCount(int petsCount) {
+        if (petsCount < 0) throw new InvalidInputException("Pets cannot be negative");
+        this.petsCount = petsCount;
     }
 
     @Override
     public void work() {
-        System.out.println(name + " owns " + numberOfPets + " pets.");
+        System.out.println(name + " owns " + petsCount + " pets.");
     }
 
     @Override

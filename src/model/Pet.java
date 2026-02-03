@@ -1,7 +1,6 @@
 package model;
 
 public class Pet {
-
     private final String name;
     private final String type;
 
